@@ -12,7 +12,7 @@
 
     <div ng-repeat="link in links | orderBy:'votes':true" style="display: block">
       <div>
-        <span>{{link.path}}</span> | <span>{{link.votes}}</span> <span ng-click="vote(link.id, 1)">up</span> || <span ng-click="vote(link.id, -1)">down</span>
+        <span>{{link.link}}</span> | <span>{{link.votes}}</span> <span ng-click="vote(link._id, 1)">up</span> || <span ng-click="vote(link._id, -1)">down</span>
       </div>
     </div>
     <input type="text" ng-model="newLink"/><button ng-click="addLink()">add link</button>
