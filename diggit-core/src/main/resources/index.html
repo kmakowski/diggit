@@ -9,7 +9,13 @@
     <div ng-controller="DiggitController">
 
     <h2>Main Diggit page!</h2>
-    <p>Today is {{date}}</p>
+
+    <div ng-repeat="link in links | orderBy:'votes':true" style="display: block">
+      <div>
+        <span>{{link.path}}</span> | <span>{{link.votes}}</span> <span ng-click="vote(link.id, 1)">up</span> || <span ng-click="vote(link.id, -1)">down</span>
+      </div>
+    </div>
+    <input type="text" ng-model="newLink"/><button ng-click="addLink()">add link</button>
 
 
     </div>
